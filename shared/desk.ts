@@ -14,8 +14,8 @@ export function desk<T>(def:Def<T>){
  }
  function draw():Frame{
   const v=def.render(state,Date.now());
-  const out:Frame=v.art?v.art.slice():[label("caption",v.title.toUpperCase().slice(0,17),1,0,def.accent+"FF","front","tiny"),
-    label("number",v.value.slice(0,17),1,6,"#FFF2D7FF","front","small")];
+  const out:Frame=v.art?v.art.slice():[label("caption",v.title.toUpperCase(),1,0,def.accent+"FF","front","tiny"),
+    label("number",v.value,1,6,"#FFF2D7FF","front","small")];
   if(v.progress!==undefined&&!v.art&&v.value.length<=8){
    const n=Math.round(Math.max(0,Math.min(1,v.progress))*6);
    for(let i=0;i<6;i++)out.push(rect("meter"+i,51+i*3,14-i,2,i+1,i<n?def.accent+"FF":"#29353CFF"));
