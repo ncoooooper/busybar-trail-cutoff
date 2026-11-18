@@ -1,0 +1,15 @@
+{
+  "id": "BB-070",
+  "source": "On-device state and physical controls exercised in the firmware emulator.",
+  "scenario": "Started the race, recorded checkpoint one and inspected its margin and the pace needed for checkpoint two.",
+  "keys": [
+    "start",
+    "ok",
+    "down",
+    "up"
+  ],
+  "frames": 54,
+  "distinct_frames": 18,
+  "exit": "App io.ncoooooper.trailcutoff exited: finished; heap peak 84.4 of 128 KiB",
+  "sha256": "23f781c86dc797c92df56ca774d6f9533b4f04772dd16ec69b7425c8020ae9e8"
+}
