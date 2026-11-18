@@ -1,7 +1,7 @@
 {
   "name": "busybar-trail-cutoff",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Check race cutoff times, mark crossings and calculate the pace needed to make the next trail checkpoint.",
   "author": "ncoooooper",
   "type": "module",

@@ -1,0 +1,48 @@
+{
+  "app": "busybar-trail-cutoff",
+  "sha256": "326f05d4bec13fede55fc1085f81009f6d6550b5c3ae3beb8deaaac10ee43c83",
+  "firmware": "1.3.1",
+  "cell": 16,
+  "lit": 14,
+  "front": [
+    72,
+    16
+  ],
+  "rear": [
+    160,
+    80
+  ],
+  "captures": [
+    {
+      "mode": "classic",
+      "guides": [
+        "start-checkpoint-clock",
+        "review-checkpoint-margin"
+      ],
+      "tour": "screen-transitions",
+      "input": [
+        [
+          "start",
+          "ok"
+        ],
+        [
+          "down",
+          "up"
+        ],
+        [
+          "down",
+          "up",
+          "ok"
+        ]
+      ],
+      "distinct_frames": [
+        17,
+        15,
+        51
+      ],
+      "rear_frames": 52,
+      "rear_tour": "screen-transitions-rear",
+      "exit": "finished"
+    }
+  ]
+}
