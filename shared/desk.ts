@@ -7,10 +7,10 @@ type Def<T>={name:string;accent:string;motion:MotionOptions;initial:()=>T;render
 export function desk<T>(def:Def<T>){
  let state=read<T>("desk-state-v1",def.initial()),dirty=false,closed=false;
  let saveTimer:ReturnType<typeof setTimeout>|undefined,clock:ReturnType<typeof setTimeout>|undefined;
- function save(){if(saveTimer!==undefined)clearTimeout(saveTimer);if(dirty){persist("desk-state-v1",state);dirty=false;}}
+ function save(){if(saveTimer!==undefined)clearTimeout(saveTimer);saveTimer=undefined;if(dirty){persist("desk-state-v1",state);dirty=false;}}
  function scheduleClock(){
   if(clock!==undefined)clearTimeout(clock);clock=undefined;
-  if(!closed&&def.ticking?.(state))clock=setTimeout(()=>{if(!closed){refresh();scheduleClock();}},1000-Date.now()%1000);
+  if(!closed&&def.ticking?.(state))clock=setTimeout(()=>{clock=undefined;if(!closed){refresh();scheduleClock();}},1000-Date.now()%1000);
  }
  function draw():Frame{
   const v=def.render(state,Date.now());
@@ -24,7 +24,7 @@ export function desk<T>(def:Def<T>){
  }
  const refresh=surface(draw,k=>{
    def.action(state,k,Date.now());dirty=true;
-   if(saveTimer!==undefined)clearTimeout(saveTimer);saveTimer=setTimeout(save,650);scheduleClock();
+   if(saveTimer!==undefined)clearTimeout(saveTimer);saveTimer=setTimeout(()=>{saveTimer=undefined;save();},650);scheduleClock();
  },()=>{closed=true;save();if(clock!==undefined)clearTimeout(clock);},def.motion);
  if(def.configure)void loadValues().then(v=>{if(!closed&&v){def.configure!(state,v);refresh();scheduleClock();}}).catch(e=>console.error("Settings",String(e)));
  scheduleClock();
