@@ -11,7 +11,7 @@
   "frames": 54,
   "distinct_frames": 18,
   "exit": "App io.ncoooooper.trailcutoff exited: finished; heap peak 84.4 of 128 KiB",
-  "sha256": "326f05d4bec13fede55fc1085f81009f6d6550b5c3ae3beb8deaaac10ee43c83",
+  "sha256": "c51520a8edefd7903571f583f8faa68e62cd5d8b923e27530818025d2a4947b5",
   "display_test": {
     "firmware": "1.3.1",
     "input": "On-device controls",
